@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraping Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <h2>Error Occured</h2>
+    <p>{{ data['error'] }}</p>
+    <div class="button-container">
+        <a href="{{ url_for('index') }}">
+            <button>Scrape Again</button>
+        </a>
+    </div>
+    
+</body>
+</html>

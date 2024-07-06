@@ -1,0 +1,45 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+ebv/
+.env
+
+# IDE/Editor specific files
+.idea/
+.vscode/
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Output files
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.csv
+*.json
+
+
+# Temporary files
+*.swp
+*~
+.DS_Store

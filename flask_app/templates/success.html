@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraping Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    
+
+</head>
+<body>
+    <h2>Scraping Result</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>MC</th>
+                <th>USDOT</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item['MC'] }}</td>
+                    <td>{{ item['USDOT'] }}</td>
+                    <td>{{ item['Email'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+    <div class="button-container">
+        <a href="{{ url_for('index') }}">
+            <button>Scrape Again</button>
+        </a>
+        <a href="{{ url_for('download_csv') }}">
+            <button>Download Excel</button>
+        </a>
+    </div>
+</body>
+</html>
