@@ -33,8 +33,6 @@ bower_components/
 *.jpg
 *.jpeg
 *.png
-*.gif
-*.ico
 *.csv
 *.json
 
