@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 
 def is_json_file_empty(file_path):
-    return os.path.getsize(file_path) == 0
+    return os.path.getsize(file_path) == 0 
 
 
 def run_scraper(start, end):
