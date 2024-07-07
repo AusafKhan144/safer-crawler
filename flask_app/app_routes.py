@@ -62,6 +62,7 @@ def index():
             )
         try:
             scraped_data = run_scraper(start, end)
+            scraped_data = sorted(scraped_data, key=lambda x: x['MC'])
             return render_template("success.html", data=scraped_data)
         except Exception as e:
             return render_template(
@@ -78,6 +79,7 @@ def download_csv():
     ) as f:
         jo = json.load(f)
     df = pd.DataFrame(jo)
+    df.sort_values(by=['MC'],inplace=True)
     csv_data = df.to_csv(index=False)
     output = make_response(csv_data)
     output.headers["Content-Disposition"] = "attachment; filename=scraped_data.csv"
