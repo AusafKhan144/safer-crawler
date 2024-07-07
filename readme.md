@@ -1,6 +1,6 @@
 # Flask-Scrapy Web Scraper
 
-This project is a web application built with Flask and Scrapy. It allows users to specify a range of numbers, run a web scraper, and view or download the scraped data. The project includes a form to input the range, displays a loader during the scraping process, and shows the results in a paginated table.
+This project is a web application built with Flask and Scrapy. It allows users to specify a range of mc numbers and get emails for those mc numbers, run a web scraper, and view or download the scraped data. The project includes a form to input the range, displays a loader during the scraping process, and shows the results in a paginated table.
 
 ## Table of Contents
 
@@ -32,8 +32,8 @@ This project is a web application built with Flask and Scrapy. It allows users t
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   git clone https://github.com/AusafKhan144/safer-crawler.git
+   cd safer-crawler
    ```
 
 2. **Create a virtual environment**:
@@ -51,12 +51,13 @@ This project is a web application built with Flask and Scrapy. It allows users t
 
 4. **Run the application**:
    ```bash
-   flask run
+   cd flask_app
+   gunicorn -w 4 -b 127.0.0.1:8000 app_routes:app #On windows use waitress-serve --host=127.0.0.1 --port=8000 app_routes:app
    ```
 
 ## Usage
 
-1. Open your web browser and navigate to `http://127.0.0.1:5000/`.
+1. Open your web browser and navigate to `http://127.0.0.1:8000/`.
 2. Enter the start and end numbers in the form and submit.
 3. Wait for the loader animation to complete.
 4. View the scraped results in the paginated table.
@@ -67,44 +68,44 @@ This project is a web application built with Flask and Scrapy. It allows users t
 
 Safer/
 ├── flask_app/
-│ ├── templates/
-│ │ └── index.html
-│ │ └── success.html
-│ │ └── error.html
-│ ├── static/
-│ │ ├── css/
-│ │ └── styles.css
-│ │ ├── js/
-│ │ └── loader.js
-│ │ └── images/
-│ │ └── loader.gif
-│ ├── init.py
-│ ├── app_routes.py
+│   ├── templates/
+│   │   ├── index.html
+│   │   ├── success.html
+│   │   └── error.html
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── styles.css
+│   │   ├── js/
+│   │   │   └── loader.js
+│   │   └── images/
+│   │       └── loader.gif
+│   ├── __init__.py
+│   ├── app_routes.py
 ├── safer/
-│ ├── safer/
-│ │ ├── spiders/
-│ │ │ └── init.py
-│ │ │ └── scraper.py
-│ │ ├── init.py
-│ │ ├── items.py
-│ │ ├── middlewares.py
-│ │ ├── pipelines.py
-│ │ └── settings.py
-│ └── scrapy.cfg
+│   ├── spiders/
+│   │   ├── __init__.py
+│   │   └── scraper.py
+│   ├── __init__.py
+│   ├── items.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+│   └── settings.py
+├── scrapy.cfg
 ├── venv/
 ├── requirements.txt
-└── README.md
+└──  README.md
+
 
 
 - **flask_app/**: Contains the Flask application files.
   - **templates/**: HTML templates for the web application.
   - **static/**: Static files like CSS, JavaScript, and images.
   - **__init__.py**: Flask application initialization file.
-  - **app.py**: Main Flask application file.
-  - **email_utils.py**: Utility functions for sending emails.
+  - **app_routes.py**: Main Flask application file.
 
-- **scrapy_project/**: Contains the Scrapy project files.
-  - **scrapy_project/**: Directory for Scrapy project settings and spiders.
+
+- **safer/**: Contains the Scrapy project files.
+  - **safer/**: Directory for Scrapy project settings and spiders.
     - **spiders/**: Directory for Scrapy spiders.
     - **__init__.py**: Scrapy project initialization file.
     - **items.py**: Defines items to be scraped.
